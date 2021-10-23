@@ -8,7 +8,7 @@ import com.hibernate.noCascadeDelete.entity.Instructor;
 import com.hibernate.noCascadeDelete.entity.InstructorDetail;
 
 
-public class DeleteProject {
+public class DeleteInstructorDetail {
 
 	public static void main(String[] args) {
 

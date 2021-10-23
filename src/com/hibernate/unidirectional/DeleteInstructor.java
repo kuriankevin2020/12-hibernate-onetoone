@@ -1,13 +1,13 @@
-package com.hibernate.bidirection;
+package com.hibernate.unidirectional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.hibernate.bidirection.entity.Instructor;
-import com.hibernate.bidirection.entity.InstructorDetail;
+import com.hibernate.unidirectional.entity.Instructor;
+import com.hibernate.unidirectional.entity.InstructorDetail;
 
-public class GetInstructorDetail {
+public class DeleteInstructor {
 
 	public static void main(String[] args) {
 
@@ -20,11 +20,13 @@ public class GetInstructorDetail {
 
 			session.beginTransaction();
 
-			int theId = 1;
-			InstructorDetail instructorDetail = session.get(InstructorDetail.class, theId);
+			Instructor instructor1 = session.get(Instructor.class, 1);
+			Instructor instructor2 = session.get(Instructor.class, 2);
 
-			System.out.println("Instructor Detail: " + instructorDetail);
-			System.out.println("Instructor: " + instructorDetail.getInstructor());
+			System.out.println(instructor1);
+
+			session.delete(instructor1);
+			session.delete(instructor2);
 
 			session.getTransaction().commit();
 
